@@ -1,6 +1,6 @@
 # pragma version 0.4.3
 
-dao: public(immutable(address))
+dao: public(address)
 emergency_dao: public(address)
 
 interface ITwocrypto:
@@ -64,7 +64,7 @@ def emergency_parameters(
     )
 
 @external
-@payableus
+@payable
 def execute(_target: address, _calldata: Bytes[MAX_CALLDATA_SIZE]) -> Bytes[MAX_OUTSIZE]:
     self._check_dao()
     return raw_call(
