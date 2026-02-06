@@ -10,6 +10,7 @@ dependencies = [
     "vyper==0.4.3",
     "snekmate==0.1.2",
     "titanoboa==0.2.8",
+    "curve-voting-lib",
 ]
 
 [tool.uv]
@@ -18,6 +19,9 @@ dev-dependencies = [
     "pytest-xdist>=3.8.0",
     "ruff==0.14.13",
 ]
+
+[tool.uv.sources]
+curve-voting-lib = { git = "https://github.com/curvefi/curve-voting-lib.git" }
 
 [tool.ruff]
 line-length = 100

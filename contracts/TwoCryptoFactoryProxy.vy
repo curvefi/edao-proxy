@@ -3,6 +3,9 @@
 dao: public(address)
 emergency: public(address)
 
+interface IFactory:
+    def accept_transfer_ownership(): nonpayable
+
 interface ITwocrypto:
     def apply_new_parameters(
         _new_mid_fee: uint256,
@@ -74,3 +77,7 @@ def set_emergency(_new_emergency: address):
     self._check_dao()
 
     self.emergency = _new_emergency
+
+@external
+def accept_transfer_ownership(_factory: IFactory):
+    extcall _factory.accept_transfer_ownership()
